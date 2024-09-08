@@ -1,11 +1,23 @@
 #!/bin/bash
 
 ###
-# Инициализируем бд
+# Выводим количество документов
 ###
 
-docker compose exec -T mongodb1 mongosh <<EOF
+docker exec -it mongos_router mongosh --port 27020 <<EOF
 use somedb
-for(var i = 0; i < 1000; i++) db.helloDoc.insertOne({age:i, name:"ly"+i})
+
+db.helloDoc.countDocuments()
 EOF
 
+docker exec -it shard1 mongosh --port 27018 <<EOF
+use somedb
+
+db.helloDoc.countDocuments();
+EOF
+
+docker exec -it shard2 mongosh --port 27019 <<EOF
+use somedb
+
+db.helloDoc.countDocuments();
+EOF
