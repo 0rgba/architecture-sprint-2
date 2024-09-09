@@ -43,12 +43,8 @@ rs.initiate(
 EOF
 
 docker exec -it mongos_router mongosh --port 27020 <<EOF
-sh.addShard( "shard1/shard1-r1:27021");
-sh.addShard( "shard1/shard1-r2:27022");
-sh.addShard( "shard1/shard1-r3:27023");
-sh.addShard( "shard2/shard2-r1:27031");
-sh.addShard( "shard2/shard2-r2:27032");
-sh.addShard( "shard2/shard2-r3:27033");
+sh.addShard( "shard1/shard1-r1:27021", "shard1/shard1-r2:27022", "shard1/shard1-r3:27023");
+sh.addShard( "shard2/shard2-r1:27031", "shard2/shard2-r2:27032", "shard2/shard2-r3:27033");
 
 sh.enableSharding("somedb");
 sh.shardCollection("somedb.helloDoc", { "name" : "hashed" } )
