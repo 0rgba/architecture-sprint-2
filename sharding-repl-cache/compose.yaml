@@ -9,7 +9,7 @@ services:
     image: kazhem/pymongo_api:1.0.0
     depends_on:
       - mongos_router
-      - redis_1
+      - redis_2
     ports:
       - 8080:8080
     networks:
@@ -18,7 +18,7 @@ services:
     environment:
       MONGODB_URL: "mongodb://mongos_router:27020"
       MONGODB_DATABASE_NAME: "somedb"
-      REDIS_URL: "redis://redis_1:6379"
+      REDIS_URL: "redis://redis_2:6379"
 
   # сервер конфигурации
   configSrv:
