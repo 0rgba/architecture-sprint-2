@@ -20,6 +20,12 @@ docker compose up -d
 ./scripts/mongo-insert.sh
 ```
 
+Инициализируем кластер redis
+
+```shell
+./scripts/redis-init.sh
+```
+
 ## Как проверить
 
 Выводим общее количество документов, и отдельно по каждому шарду
