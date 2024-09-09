@@ -1,35 +1,3 @@
-# pymongo-api
+Ссылка на схему:
 
-## Как запустить
-
-Запускаем mongodb и приложение
-
-```shell
-docker compose up -d
-```
-
-Заполняем mongodb данными
-
-```shell
-./scripts/mongo-init.sh
-```
-
-## Как проверить
-
-### Если вы запускаете проект на локальной машине
-
-Откройте в браузере http://localhost:8080
-
-### Если вы запускаете проект на предоставленной виртуальной машине
-
-Узнать белый ip виртуальной машины
-
-```shell
-curl --silent http://ifconfig.me
-```
-
-Откройте в браузере http://<ip виртуальной машины>:8080
-
-## Доступные эндпоинты
-
-Список доступных эндпоинтов, swagger http://<ip виртуальной машины>:8080/docs
+https://app.diagrams.net/#H0rgba%2Farchitecture-sprint-2%2Fsprint-2%2FДиаграмма%20без%20названия.drawio#%7B%22pageId%22%3A%22-H_mtQnk-PTXWXPvYvuk%22%7D
